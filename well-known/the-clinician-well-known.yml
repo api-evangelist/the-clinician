@@ -1,0 +1,64 @@
+generated: '2026-09-02'
+method: searched
+source: https://theclinician.com/.well-known/security.txt
+description: >-
+  Results of probing the /.well-known/ discovery surface for every host this
+  company is known to serve. The Clinician publishes no public API base URL, so
+  the probed hosts are the corporate/product web hosts found in apis.yml and via
+  certificate-transparency enumeration of theclinician.com. Status is the HTTP
+  code observed at fetch time on 2026-09-02. Only theclinician.com returned a
+  real document: an RFC 9116 security.txt, saved verbatim. Every other path
+  returned a 404 HTML error page, and gentu.theclinician.com /
+  covid19.theclinician.com answer 404 (not a 200 SPA shell) for all of them.
+hosts:
+  - host: https://theclinician.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        type: text/plain
+        file: the-clinician-security.txt
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/change-password
+        status: 404
+  - host: https://gentu.theclinician.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+  - host: https://covid19.theclinician.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+notes:
+  - >-
+    The served security.txt is unsigned and deliberately omits Encryption,
+    Acknowledgments and CSAF, stating in its own comments that no OpenPGP key,
+    acknowledgements page or machine-readable advisory feed exists rather than
+    inventing them. Expires 2027-08-26.
+  - >-
+    theclinician.com/robots.txt (HTTP 200) explicitly Allows GPTBot,
+    OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, Claude-User,
+    anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Applebot,
+    Applebot-Extended, Bingbot, meta-externalagent, Bytespider and CCBot on /,
+    and asks for attribution. That is a published agent-access posture, but it is
+    not a /.well-known document, so it is recorded here rather than scored as one.
+  - >-
+    No /llms.txt is served (HTTP 404 at https://theclinician.com/llms.txt).

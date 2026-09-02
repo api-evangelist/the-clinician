@@ -1,0 +1,182 @@
+generated: '2026-09-02'
+method: searched
+source: https://theclinician.com/
+description: >-
+  Standards and compliance posture asserted by The Clinician on its own public
+  surface, plus what could be verified by probe. CRITICAL CAVEAT ON PROVENANCE:
+  The Clinician publishes NO machine-readable contract (no OpenAPI, GraphQL SDL,
+  AsyncAPI, WSDL or .proto was found on any host — see x-coverage in apis.yml),
+  so every clinical-interoperability entry below is a PROSE CLAIM read from the
+  enterprise capabilities section of theclinician.com, not a signature read out
+  of a contract. That distinction is the whole point of
+  domain_standard_conformance: a buyer who already speaks FHIR cannot confirm
+  from anything The Clinician publishes that a bespoke connector is unnecessary.
+standards:
+  - id: rfc9116
+    conforms: true
+    method: probed
+    evidence: >-
+      https://theclinician.com/.well-known/security.txt returns HTTP 200
+      text/plain with Contact, Expires, Preferred-Languages, Canonical and Policy
+      fields. Unsigned; Encryption/Acknowledgments/CSAF deliberately omitted and
+      the omission is documented in the file itself.
+  - id: fhir
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "API-driven architecture aligned with HL7 FHIR (including SMART-on-FHIR),
+      HL7 v2.x, openEHR and DICOM" and "Outcomes returned to the EMR via FHIR" —
+      https://theclinician.com/ (enterprise capabilities). No CapabilityStatement,
+      FHIR base URL or conformance resource is published.
+  - id: smart-on-fhir
+    conforms: claimed
+    method: searched
+    evidence: >-
+      Named explicitly in the interoperability capability statement on
+      https://theclinician.com/. No SMART .well-known/smart-configuration is
+      served on any reachable host.
+  - id: hl7-v2
+    conforms: claimed
+    method: searched
+    evidence: '"HL7 v2.x" named in the interoperability capability on https://theclinician.com/.'
+  - id: dicom
+    conforms: claimed
+    method: searched
+    evidence: '"DICOM" named in the interoperability capability on https://theclinician.com/.'
+  - id: openehr
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "openEHR" named in the interoperability capability on
+      https://theclinician.com/. This is the signal that put The Clinician in the
+      API Evangelist harvest backlog under source openehr-coalition. No published
+      archetype, template or openEHR REST endpoint was found.
+  - id: omop-cdm
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "An OMOP Clinical Events API ingests visits, procedures, drugs and
+      observations to trigger pathway logic in real time" —
+      https://theclinician.com/. This is the only named API product on the
+      company's public surface; it has no published reference, base URL or spec.
+  - id: snomed-ct
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "Clinical terminology across SNOMED CT, LOINC, ICD-10 and RxNorm" —
+      https://theclinician.com/.
+  - id: loinc
+    conforms: claimed
+    method: searched
+    evidence: Named in the same terminology claim on https://theclinician.com/.
+  - id: icd-10
+    conforms: claimed
+    method: searched
+    evidence: Named in the same terminology claim on https://theclinician.com/.
+  - id: rxnorm
+    conforms: claimed
+    method: searched
+    evidence: Named in the same terminology claim on https://theclinician.com/.
+  - id: ichom-standard-sets
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "The Clinician is a long-serving ICHOM partner. Any ICHOM Standard Set can
+      be deployed on TCP" — https://theclinician.com/ (Partners section,
+      Recognised implementation partner / accreditation support).
+  - id: iso-27001
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "ISO 27001 certified information security management" —
+      https://theclinician.com/ (Trust & Compliance). No certificate number,
+      certification body, scope statement or trust centre is published.
+  - id: soc-2
+    conforms: claimed
+    method: searched
+    evidence: >-
+      Listed in the site footer compliance strip ("ISO 27001 · SOC 2 · GDPR ·
+      HIPAA · MSSS-DGTI") on https://theclinician.com/. No report, Type, or
+      audit period is published and there is no trust centre to request one from.
+  - id: hipaa
+    conforms: claimed
+    method: searched
+    evidence: '"HIPAA-compliant data handling" — https://theclinician.com/ (Trust & Compliance).'
+  - id: gdpr
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "GDPR-aligned privacy controls" — https://theclinician.com/; an EU
+      representative contact (contact@gdprlocal.com) is published on the same page.
+  - id: oauth2
+    conforms: claimed
+    method: searched
+    evidence: >-
+      The integration diagram on https://theclinician.com/ lists an IDENTITY lane
+      of "Active Directory / SAML · OAuth · SCIM", and the access-control
+      capability describes Active Directory role mirroring plus "TCP-specific
+      scopes". Probe finding, recorded against it: no
+      /.well-known/oauth-authorization-server and no
+      /.well-known/oauth-protected-resource on any reachable host (HTTP 404), so
+      no authorization-server metadata is discoverable.
+  - id: saml
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "SSO/SAML" in the integration capability and "SAML" in the IDENTITY lane of
+      the integration diagram — https://theclinician.com/.
+  - id: scim
+    conforms: claimed
+    method: searched
+    evidence: >-
+      "SCIM" named in the IDENTITY lane of the integration diagram on
+      https://theclinician.com/. No SCIM schema URN or /scim/v2 surface is
+      published, so this cannot be verified from a contract.
+  - id: oidc
+    conforms: unknown
+    method: probed
+    evidence: 'https://theclinician.com/.well-known/openid-configuration — HTTP 404.'
+domain_standard_signature:
+  verified: false
+  reason: >-
+    domain_standard_conformance reads the CONTRACT, and The Clinician publishes
+    none. The health regime's standard shortlist (fhir, smart-on-fhir, us-core,
+    uscdi, da-vinci, carin-blue-button, fhir-bulk-data, cds-hooks, c-cda, hl7-v2,
+    dicom) was probed for on every reachable host — no CapabilityStatement, no
+    /metadata endpoint, no /.well-known/smart-configuration, no OpenAPI. Four of
+    the shortlist (fhir, smart-on-fhir, hl7-v2, dicom) are claimed in prose on
+    the company's own homepage and are recorded above as `claimed`, which is
+    honestly weaker than a signature in a contract and must not be scored as one.
+  remedy: >-
+    Publish a FHIR CapabilityStatement (or an OpenAPI for the OMOP Clinical
+    Events API) at a stable public URL. A single conformance resource would turn
+    four prose claims into a machine-checkable fact for every prospective buyer.
+regulatory_context:
+  regime: health
+  jurisdictions_named:
+    - New Zealand (headquarters, Auckland)
+    - Singapore (hub; "the only third-party system operating across Singapore's Ministry of Health firewall")
+    - Australia (hub; South Australia state-wide deployment)
+    - Quebec, Canada (MSSS-DGTI named in the compliance strip)
+    - Gulf states (PDPL named in the regional regulatory alignment claim)
+  source: https://theclinician.com/
+evidence_gates:
+  - name: Security pack
+    published: false
+    access: request
+    detail: >-
+      The security and compliance section closes with "Request the security pack
+      for procurement review" — the ISO 27001 certificate, SOC 2 report and data
+      residency detail are supplied on request for procurement rather than
+      published. There is no trust centre page, so no TrustCenter pointer is
+      emitted.
+    source: https://theclinician.com/
+legal_entity: The Clinician Holdings Limited (and wholly owned subsidiaries)
+data_residency_claimed:
+  - KSA
+  - GCC
+  - EU
+  - AU
+  - US
+  - Canada
+  - Singapore

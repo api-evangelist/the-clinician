@@ -1,0 +1,69 @@
+generated: '2026-09-02'
+method: searched
+source: https://theclinician.com/
+docs: https://theclinician.com/
+description: >-
+  Authentication and access-control profile for The Clinician Platform (TCP),
+  read from the enterprise capabilities and integration sections of the company's
+  own homepage. THIS IS NOT DERIVED FROM A CONTRACT: The Clinician publishes no
+  OpenAPI, so there are no securitySchemes to read and no token endpoint, header
+  name, scope string or grant type is public. What follows is the authentication
+  MODEL the provider describes in prose, recorded so an integrator knows what to
+  expect before the sales conversation — not a specification an agent can act on.
+schemes:
+  - id: enterprise-sso
+    type: federated
+    documented: true
+    detail: >-
+      "Integrates with your organisation's Active Directory to mirror existing
+      roles and permissions." The integration diagram names an IDENTITY lane of
+      Active Directory / SAML / OAuth / SCIM, and the integration capability
+      summarises as "FHIR-native · HL7 · REST APIs · SSO/SAML".
+    source: https://theclinician.com/
+  - id: tcp-scopes
+    type: oauth2-like
+    documented: partial
+    detail: >-
+      The provider states organisations can "extend [AD roles] with TCP-specific
+      scopes where the platform needs finer-grained control". No scope reference,
+      naming convention or authorization server is published, so no scopes/
+      artifact is written — an empty or invented scope list would be worse than
+      the honest gap.
+    source: https://theclinician.com/
+  - id: signed-token-embed
+    type: signed-token
+    documented: true
+    detail: >-
+      "EHR iframe embedding via signed tokens" — the mechanism by which TCP is
+      surfaced inside a host EHR session. Token format, signing algorithm, claim
+      set and lifetime are all unpublished.
+    source: https://theclinician.com/
+  - id: mfa
+    type: second-factor
+    documented: true
+    detail: Two-factor authentication is stated as available for platform users.
+    source: https://theclinician.com/
+authorization_model:
+  style: group-and-role-based, within a per-deployment organisational hierarchy
+  tenancy: >-
+    "Multi-tenant isolation enforced at the API boundary on every request" —
+    the only statement the company makes about its API boundary behaviour.
+  data_minimisation: >-
+    PII can be restricted per health service: clinical teams see their own
+    patients identifiably, cross-organisational users see aggregated, anonymised
+    data only.
+  audit: Full audit trail across authentication, authorisation and data access.
+  source: https://theclinician.com/
+discovery_probes:
+  - url: https://theclinician.com/.well-known/openid-configuration
+    status: 404
+  - url: https://theclinician.com/.well-known/oauth-authorization-server
+    status: 404
+  - url: https://theclinician.com/.well-known/oauth-protected-resource
+    status: 404
+gaps:
+  - No public token endpoint, grant type, header name or key format.
+  - No authorization-server or protected-resource metadata at any well-known path.
+  - >-
+    No public scope reference, so the "TCP-specific scopes" the provider markets
+    cannot be evaluated by a buyer or consumed by an agent.

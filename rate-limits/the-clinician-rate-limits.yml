@@ -1,0 +1,24 @@
+generated: '2026-09-02'
+method: searched
+source: https://theclinician.com/
+limit_count: 0
+description: >-
+  No published rate limits. The Clinician has no public API reference, no
+  developer portal and no machine-readable contract, so there is nothing that
+  documents a quota, a window, a burst allowance, or the response headers the
+  platform returns on exhaustion. Nothing could be observed live either: there is
+  no public, unauthenticated API endpoint to call. An honest zero.
+rate_limits: []
+headers: []
+exhaustion_status: null
+probes:
+  - url: https://theclinician.com/docs
+    status: 404
+  - url: https://theclinician.com/developers
+    status: 404
+  - url: https://theclinician.com/api
+    status: 404
+note: >-
+  The only statement the provider makes about API runtime behaviour is
+  "Multi-tenant isolation enforced at the API boundary on every request"
+  (https://theclinician.com/), which describes isolation, not throttling.

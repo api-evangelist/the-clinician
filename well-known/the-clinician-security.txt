@@ -1,0 +1,16 @@
+# The Clinician - vulnerability disclosure route (RFC 9116)
+# Policy: https://theclinician.com/security/vulnerability-disclosure-policy
+
+Contact: mailto:support@theclinician.com
+Expires: 2027-08-26T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://theclinician.com/.well-known/security.txt
+Policy: https://theclinician.com/security/vulnerability-disclosure-policy
+
+# Please do not send us personal or patient data in a report. Describe the
+# access path and the shape of what was exposed, and redact the values.
+# See section 4 of the policy above.
+#
+# Fields deliberately omitted rather than invented: Encryption (no published
+# OpenPGP key exists for this mailbox), Acknowledgments (no such page exists),
+# CSAF (we do not publish machine-readable advisories). This file is unsigned.

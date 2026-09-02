@@ -1,0 +1,34 @@
+generated: '2026-09-02'
+method: searched
+source: https://theclinician.com/
+plan_count: 0
+currency: null
+description: >-
+  The Clinician publishes no pricing. There is no /pricing page, no plans page,
+  and no tier table anywhere on theclinician.com — the sitemap (HTTP 200,
+  https://theclinician.com/sitemap.xml) lists exactly seven crawlable URLs: the
+  root, five /insights articles and the vulnerability disclosure policy. Every
+  commercial call to action on the site is "Book a demo", "Talk to our team" or
+  "Request the security pack". This is an enterprise, contract-priced platform
+  sold to health systems and ministries of health; an honest zero, not a gap in
+  our search.
+plans: []
+commercial_motion:
+  model: enterprise / contact-sales
+  calls_to_action:
+    - Book a demo
+    - Talk to our team
+    - Request the security pack
+  delivery_model: >-
+    The provider publishes a three-phase engagement model instead of tiers —
+    Foundation ("we lead"), Enablement ("we coach"), Autonomy ("you own") —
+    described as "a delivery model designed for health systems that want to own
+    their outcomes program, not rent it".
+  free_tier: false
+  self_service_signup: false
+probes:
+  - url: https://theclinician.com/pricing
+    status: 404
+  - url: https://theclinician.com/sitemap.xml
+    status: 200
+    note: seven URLs, none commercial

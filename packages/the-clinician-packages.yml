@@ -1,0 +1,105 @@
+generated: '2026-09-02'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=theclinician
+description: >-
+  First-party packages published by The Clinician. Discovered by searching the
+  public registries for the company scope and confirmed against the
+  github.com/theclinician organisation (17 public repositories) named as each
+  package's repository. IMPORTANT: none of these is an SDK or client library for
+  The Clinician Platform (TCP) API — they are general-purpose open-source
+  JavaScript libraries the company open-sourced out of its own product stack
+  (Meteor/DDP transport, Redux selectors, chart bindings, a Solid.js component
+  library). The Clinician publishes no public API client library, so no `SDKs`
+  pointer is emitted in apis.yml. Versions and publish dates read from
+  registry.npmjs.org metadata on 2026-09-02.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@theclinician/ddp-connector"
+    url: https://www.npmjs.com/package/@theclinician/ddp-connector
+    source: https://github.com/theclinician/ddp-connector
+    install: npm install @theclinician/ddp-connector
+    official: true
+    api_client: false
+    license: MIT
+    version: 0.9.6
+    published: '2023-10-05'
+    note: DDP client bindings for react-redux. Internal platform tooling, not an API SDK.
+  - language: javascript
+    registry: npm
+    name: "@theclinician/ddp-client"
+    url: https://www.npmjs.com/package/@theclinician/ddp-client
+    source: https://github.com/theclinician/ddp-client
+    install: npm install @theclinician/ddp-client
+    official: true
+    api_client: false
+    license: MIT
+    version: 0.8.1
+    published: '2021-09-06'
+    note: Alternative DDP (Meteor) client implementation.
+  - language: javascript
+    registry: npm
+    name: "@theclinician/selectors"
+    url: https://www.npmjs.com/package/@theclinician/selectors
+    source: https://github.com/theclinician/selectors
+    install: npm install @theclinician/selectors
+    official: true
+    api_client: false
+    license: MIT
+    version: 0.7.0
+    published: '2021-04-15'
+    note: Building blocks for complex selector functions.
+  - language: javascript
+    registry: npm
+    name: "@theclinician/prism"
+    url: https://www.npmjs.com/package/@theclinician/prism
+    source: https://github.com/theclinician/prism
+    install: npm install @theclinician/prism
+    official: true
+    api_client: false
+    license: MIT
+    version: 0.0.4
+    published: '2024-03-02'
+    note: Solid.js component library. Most recently published of the six.
+  - language: javascript
+    registry: npm
+    name: "@theclinician/toolbelt"
+    url: https://www.npmjs.com/package/@theclinician/toolbelt
+    source: https://github.com/theclinician/js-toolbelt
+    install: npm install @theclinician/toolbelt
+    official: true
+    api_client: false
+    license: MIT
+    version: 0.1.1
+    published: '2019-12-30'
+    note: General JavaScript utilities.
+  - language: javascript
+    registry: npm
+    name: "@theclinician/react-dc"
+    url: https://www.npmjs.com/package/@theclinician/react-dc
+    source: https://github.com/theclinician/react-dc
+    install: npm install @theclinician/react-dc
+    official: true
+    api_client: false
+    license: MIT
+    version: 1.0.8
+    published: '2017-12-21'
+    note: React bindings for dc.js charts.
+registries_checked:
+  - registry: npm
+    query: theclinician
+    result: 6 packages, all under the @theclinician scope
+  - registry: npm
+    query: zedoc
+    result: >-
+      1 package named `zedoc` (a NestJS Swagger docs library) — unrelated to
+      The Clinician's ZEDOC product; not first-party, not recorded.
+  - registry: pypi
+    query: theclinician
+    result: 404 — no package
+currency_finding: >-
+  Every first-party package is stale relative to the product: the newest
+  (@theclinician/prism, 0.0.4) last published 2024-03-02, and four of six last
+  published between 2017 and 2021. This is a decay signal about the company's
+  open-source shelf, not about the TCP API, which has no published client library
+  at all.
