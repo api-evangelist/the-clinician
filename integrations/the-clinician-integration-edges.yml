@@ -1,0 +1,25 @@
+generated: '2026-10-13'
+method: searched
+checked:
+- https://aws.amazon.com/marketplace/
+marketplace_apps: []
+edges:
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=4c40fe63-2529-42e2-8e26-b79dfa53cf87
+  listing_count: 16
+  apps:
+  - 'Digital Care Pathway: Hip & Knee Osteoarthritis Surgery PROMs (SG)'
+  - ZEDOC - Enterprise Annual Contract
+  - 'Digital Care Pathway: Cataract Surgery PROMs (AU)'
+  - 'Digital Care Pathway: COVID-19 Remote Monitoring (SG)'
+  - 'Digital Care Pathway: Cataract Surgery PROMs (NZ)'
+  seller_name: ZEDOC by The Clinician
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
