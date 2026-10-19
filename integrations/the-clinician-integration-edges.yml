@@ -1,7 +1,14 @@
 generated: '2026-10-13'
 method: searched
 checked:
+- https://api.nuget.org/v3
 - https://aws.amazon.com/marketplace/
+- https://crates.io/api/v1
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -23,3 +30,86 @@ edges:
   seller_name: ZEDOC by The Clinician
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript)
+  evidence: https://www.npmjs.com/package/@theclinician/ddp-client
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@theclinician/ddp-client'
+      version: 0.8.1
+      released: '2026-08-27'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@theclinician/ddp-client
+      repo_leg: github-org:theclinician
+      publisher_leg: email:theclinician.com
+      matched_by: domain
+    - name: '@theclinician/ddp-connector'
+      version: 0.9.6
+      released: '2026-08-27'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@theclinician/ddp-connector
+      repo_leg: github-org:theclinician
+      publisher_leg: email:theclinician.com
+      matched_by: domain
+    - name: '@theclinician/prism'
+      version: 0.0.4
+      released: '2026-08-27'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@theclinician/prism
+      repo_leg: github-org:theclinician
+      publisher_leg: email:theclinician.com
+      matched_by: domain
+    - name: '@theclinician/react-dc'
+      version: 1.0.8
+      released: '2026-08-27'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@theclinician/react-dc
+      repo_leg: github-org:theclinician
+      publisher_leg: email:theclinician.com
+      matched_by: domain
+    - name: '@theclinician/selectors'
+      version: 0.7.0
+      released: '2026-08-27'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@theclinician/selectors
+      repo_leg: github-org:theclinician
+      publisher_leg: email:theclinician.com
+      matched_by: domain
+    - name: '@theclinician/toolbelt'
+      version: 0.1.1
+      released: '2026-08-27'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@theclinician/toolbelt
+      repo_leg: github-org:theclinician
+      publisher_leg: email:theclinician.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
+source:
+- https://api.nuget.org/v3
+- https://crates.io/api/v1
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
