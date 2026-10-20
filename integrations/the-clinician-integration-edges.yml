@@ -11,25 +11,6 @@ checked:
 - https://rubygems.org/api/v1
 marketplace_apps: []
 edges:
-- partner_name: AWS Marketplace
-  partner: amazon-web-services
-  partner_match: aggregator
-  type: marketplace
-  marketplace: aws-marketplace
-  channel: distribution
-  relationship: distribution-channel
-  direction: third-party
-  evidence: https://aws.amazon.com/marketplace/seller-profile?id=4c40fe63-2529-42e2-8e26-b79dfa53cf87
-  listing_count: 16
-  apps:
-  - 'Digital Care Pathway: Hip & Knee Osteoarthritis Surgery PROMs (SG)'
-  - ZEDOC - Enterprise Annual Contract
-  - 'Digital Care Pathway: Cataract Surgery PROMs (AU)'
-  - 'Digital Care Pathway: COVID-19 Remote Monitoring (SG)'
-  - 'Digital Care Pathway: Cataract Surgery PROMs (NZ)'
-  seller_name: ZEDOC by The Clinician
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
 - partner_name: npm registry
   partner: npm
   partner_match: register
@@ -105,11 +86,30 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=4c40fe63-2529-42e2-8e26-b79dfa53cf87
+  listing_count: 16
+  apps:
+  - 'Digital Care Pathway: Hip & Knee Osteoarthritis Surgery PROMs (SG)'
+  - ZEDOC - Enterprise Annual Contract
+  - 'Digital Care Pathway: Cataract Surgery PROMs (AU)'
+  - 'Digital Care Pathway: COVID-19 Remote Monitoring (SG)'
+  - 'Digital Care Pathway: COVID-19 Remote Monitoring (AU)'
+  seller_name: ZEDOC by The Clinician
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 source:
-- https://api.nuget.org/v3
-- https://crates.io/api/v1
-- https://proxy.golang.org
-- https://pypi.org/pypi
 - https://registry.npmjs.org
-- https://repo1.maven.org/maven2
+- https://pypi.org/pypi
 - https://rubygems.org/api/v1
+- https://crates.io/api/v1
+- https://repo1.maven.org/maven2
+- https://api.nuget.org/v3
+- https://proxy.golang.org
